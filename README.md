@@ -1,14 +1,18 @@
-# energy-products-demo
+# Energy Products Search Engine
 
-Follow these steps:
+## Built with React & Styled Components 
 
-npm install -g json-server
+##### Follow these steps:
 
-npm install
+    npm install -g json-server
 
+    npm install
 
-json-server --watch data/db.json
+    json-server --watch data/db.json
 
-npm run serve
+    npm run serve
 
-Visit http://localhost:9000
+Now view at following URL:  http://localhost:9000
+
+##### Assumptions:
+The user must not already be registered with an email address and password.
