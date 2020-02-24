@@ -29,7 +29,7 @@ export default class SearchForm extends Component {
     return (
       <Form onSubmit={this.handleSubmit}>
         <div style={{margin: '1rem 0rem'}}>
-          <TextField name={'total_gas_consumption'} type={'number'} onChange={this.handleChange} />
+          <TextField name={'total_gas_consumption'} type={'number'} label={'Enter your consumption'} onChange={this.handleChange} />
          </div>
         <div style={{margin: '1rem 0rem'}}>
           <Button type={'submit'} value={'Search Products'} />

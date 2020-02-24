@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { Text, Error, StyledInput } from './Styles';
+import { Text, Error, StyledInput, Label } from './Styles';
 
 const TextField = styled(({
   id,
   name,
   value,
+  label,
   placeholder,
   hasError,
   isTouched,
@@ -22,6 +23,7 @@ const TextField = styled(({
 
   return (
     <div className={className}>
+      {label && <Label for={name}>{label}</Label>}
       <StyledInput
         id={id}
         name={name}

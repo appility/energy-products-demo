@@ -1,10 +1,21 @@
-export function isNumber(num) {
+import sortBy from 'lodash/sortBy'
+/**
+ *
+ * sortByCost
+ *
+ */
+ export function isNumber(num) {
   if (num === null || (typeof num === 'string' && num.length === 0)) {
     return false
   }
   return !isNaN(num)
 }
 
+/**
+ *
+ * sortByCost
+ *
+ */
 export function returnAnnualCost(
   rate,
   dailyStandingCharge,
@@ -13,6 +24,23 @@ export function returnAnnualCost(
   return totalGasConsumption * rate + dailyStandingCharge * 365
 }
 
+/**
+ *
+ * formatPrice
+ *
+ */
 export function formatPrice(price) {
   return `&#163; ${price.toFixed(2)}`
 }
+
+/**
+ *
+ * sortProductsByCost
+ *
+ */
+export function sortProductsByCost(products) {
+  return sortBy(products, ['annual_cost'])
+}
+
+
+
