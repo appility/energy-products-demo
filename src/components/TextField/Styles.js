@@ -23,8 +23,14 @@ const StyledInput = styled.input`
   }
 `
 
+const Label = styled.label`
+  font-size: 1rem;
+  margin: 8px auto;
+`
+
 export {
   Text,
   Error,
-  StyledInput
+  StyledInput,
+  Label
 };
