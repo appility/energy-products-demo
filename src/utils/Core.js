@@ -39,7 +39,7 @@ export function formatPrice(price) {
  *
  */
 export function sortProductsByCost(products) {
-  return _.sortBy(products, ['annual_cost'])
+  return sortBy(products, ['annual_cost'])
 }
 
 
