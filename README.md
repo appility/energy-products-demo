@@ -1,18 +1,31 @@
 # Energy Products Search Engine
 
-## Built with React & Styled Components 
+#### Download it:
+```bash
+git clone https://github.com/appility/energy-products-demo.git
+```
+#### Follow these steps to run:
 
-##### Follow these steps:
-
-    npm install -g json-server
-
-    npm install
-
-    json-server --watch data/db.json
-
-    npm run serve
+```bash
+npm install -g json-server
+```
+```bash
+npm install
+```
+```bash
+json-server --watch data/db.json
+```
+```bash
+npm run serve
+```
 
 Now view at following URL:  http://localhost:9000
 
+#### Built with:
+React / Axios / Styled Components / Webpack /Babel
+
 ##### Assumptions:
-The user must not already be registered with an email address and password.
+You've already installed Node
+```bash
+brew install node
+```
