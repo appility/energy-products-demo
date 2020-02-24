@@ -13,7 +13,7 @@ const useStyles = makeStyles({
     maxWidth: 600,
   },
   media: {
-    height: 140,
+    height: 240,
   },
 });
 
@@ -23,7 +23,7 @@ export default function ProductCard(props) {
   <Card className={classes.root}>
         <CardMedia
           className={classes.media}
-          image="https://picsum.photos/600/480"
+          image={`https://picsum.photos/600/480?${props.id}`}
           title={props.supplier}
         />
         <CardContent>

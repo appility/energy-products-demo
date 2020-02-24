@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
+import ProductStore from './../stores/Products'
 import Layout from './../layouts/Base'
 import SearchForm from './../components/SearchForm'
 
@@ -11,6 +12,7 @@ class Search extends Component {
   handleSubmit(data) {
     event.preventDefault()
     let { total_gas_consumption } = data
+    ProductStore.clear()
     this.props.history.push(`/products/${total_gas_consumption}`)
   }
 

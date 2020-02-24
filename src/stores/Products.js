@@ -8,11 +8,15 @@ const Products = {
     return data ? data : null
   }, 
   getById: function(productId) {
+    if ( !data ) return null
     let id = parseInt(productId, 10)
     let result = data.find(function(element) {
       return element.id === id
     }) 
     return result ? result : null
+  },
+  clear: function(){
+    data = null
   }
 }
 

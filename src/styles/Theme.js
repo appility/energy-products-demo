@@ -1,6 +1,7 @@
 export const Theme = {
   color: {
-    'primary': '4ECDC4',
+    'primary': '#006CFF',
+    'primaryDarker': '#0053E6',
     'black': '#313639',
     'error': '#b00020',
     'borderColor': '#313639',

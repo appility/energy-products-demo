@@ -1,10 +1,11 @@
 import sortBy from 'lodash/sortBy'
+
 /**
  *
- * sortByCost
+ * isNumber
  *
  */
- export function isNumber(num) {
+export function isNumber(num) {
   if (num === null || (typeof num === 'string' && num.length === 0)) {
     return false
   }
@@ -13,7 +14,7 @@ import sortBy from 'lodash/sortBy'
 
 /**
  *
- * sortByCost
+ * returnAnnualCost
  *
  */
 export function returnAnnualCost(
@@ -30,17 +31,14 @@ export function returnAnnualCost(
  *
  */
 export function formatPrice(price) {
-  return `&#163; ${price.toFixed(2)}`
+  return `&#163;${price.toFixed(2)}`
 }
 
 /**
  *
- * sortProductsByCost
+ * sortProductsByAnnualCost
  *
  */
 export function sortProductsByCost(products) {
-  return sortBy(products, ['annual_cost'])
+  return sortBy(products, 'annual_cost')
 }
-
-
-

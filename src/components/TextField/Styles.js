@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import Theme from './../../styles/Theme';
+import styled from 'styled-components'
+import Theme from './../../styles/Theme'
 
 const Text = styled.p`
   margin: 8px auto;
@@ -16,21 +16,22 @@ const StyledInput = styled.input`
   padding: 0.5rem 0.8rem;
   border-width: 1px;
   border-style: solid;
-  border-color: ${props => props.error ? Theme.color['error'] : Theme.color['borderColor'] };
+  border-color: ${props =>
+    props.error ? Theme.color['error'] : Theme.color['borderColor']};
   margin: 0;
+  outline: none;
   &:focus {
-    border-color: ${props => props.error ? Theme.color['error'] : Theme.color['borderColor']};
+    border-color: ${props =>
+      props.error ? Theme.color['error'] : Theme.color['borderColor']};
   }
 `
 
 const Label = styled.label`
+  display: inline-block;
   font-size: 1rem;
-  margin: 8px auto;
+  font-weight: 400;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  margin: 0.5rem auto;
 `
 
-export {
-  Text,
-  Error,
-  StyledInput,
-  Label
-};
+export { Text, Error, StyledInput, Label }

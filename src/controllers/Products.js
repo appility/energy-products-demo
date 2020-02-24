@@ -1,20 +1,20 @@
-import React, { Component } from "react"
-import { MemoryRouter as Router } from "react-router"
-import { Link as RouterLink } from "react-router-dom"
-import { Helmet } from "react-helmet"
-import axios from "axios"
-import { withRouter } from "react-router-dom"
-import { sortProductsByCost } from "./../utils/Core"
-import ProductStore from "./../stores/Products"
-import Layout from "./../layouts/Base"
-import ProductTable from "./../components/ProductTable"
-import Typography from "@material-ui/core/Typography"
-import Breadcrumbs from "@material-ui/core/Breadcrumbs"
-import Link from "@material-ui/core/Link"
+import React, { Component } from 'react'
+import { MemoryRouter as Router } from 'react-router'
+import { Link as RouterLink } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
+import axios from 'axios'
+import { withRouter } from 'react-router-dom'
+import { returnAnnualCost, sortProductsByCost } from './../utils/Core'
+import ProductStore from './../stores/Products'
+import Layout from './../layouts/Base'
+import ProductTable from './../components/ProductTable'
+import Typography from '@material-ui/core/Typography'
+import Breadcrumbs from '@material-ui/core/Breadcrumbs'
+import Link from '@material-ui/core/Link'
 
-const PRODUCT_API_ENDPOINT = "http://localhost:3000/products?status=live"
+const PRODUCT_API_ENDPOINT = 'http://localhost:3000/products?status=live'
 
-const ERROR_MESSAGE = "Something went wrong, please try again later"
+const ERROR_MESSAGE = 'Something went wrong, please try again later'
 
 class Products extends Component {
   constructor(props) {
@@ -41,7 +41,6 @@ class Products extends Component {
       axios
         .get(PRODUCT_API_ENDPOINT)
         .then(response => {
-
           if (response.data) {
             let products = this.augmentProducts(response.data)
             this.setState({ products: products })
@@ -78,7 +77,11 @@ class Products extends Component {
     )
   }
 
-  renderResults({ error, products }) {
+  returnSorted(products) {
+    return sortProductsByCost(products)
+  }
+
+  renderResults({ error, productsSorted }) {
     let {
       match: { params }
     } = this.props
@@ -86,16 +89,8 @@ class Products extends Component {
       this.renderError()
     }
     return (
-      <ProductTable
-        products={products}
-        total_gas_consumption={params.total_gas_consumption}
-        viewProduct={this.viewProduct}
-      />
+      <ProductTable products={productsSorted} viewProduct={this.viewProduct} />
     )
-  }
-
-  returnSorted(products) {
-    return sortProductsByCost(products)
   }
 
   render() {
@@ -106,7 +101,7 @@ class Products extends Component {
         <Helmet>
           <title>Products</title>
         </Helmet>
-        <div style={{ margin: "1rem 0" }}>
+        <div style={{ margin: '1rem 0' }}>
           <Breadcrumbs aria-label="breadcrumb">
             <Link component={RouterLink} to="/">
               Home

@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
+import Theme from './../../styles/Theme'
 
 const BaseButton = `
   display: inline-block;
@@ -24,8 +25,11 @@ const BaseButton = `
   background-color: transparent;
   -webkit-appearance: none;
   -webkit-tap-highlight-color: transparent;
-  background-color: #1976d2;
+  background-color: ${Theme.color['primary']};
   box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
+  &:hover {
+     background-color: ${Theme.color['primaryDarker']};
+  }
 `
 
 const StyledButton = styled.button`
@@ -37,7 +41,4 @@ const StyledInput = styled.input`
   ${BaseButton}
 `
 
-export {
-  StyledButton,
-  StyledInput
-};
+export { StyledButton, StyledInput }
